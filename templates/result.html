@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Liver Disease Result</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <style>
+         
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap');
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Poppins', sans-serif;
+         }
+         body {
+         height: 100vh;
+         width: 100%;
+         background-image:url('https://i.ibb.co/fvDfF8t/background.png');
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         color: #ededed;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+         display: flex;
+         flex-direction: column;
+         }
+         .container-heading{
+         padding: 40px;
+   
+         }
+         .heading{
+         font-size: 50px;
+         font-weight: 700;
+         }
+         .container h2{
+            font-size: 50px;
+         font-weight: 700;
+         }
+         .container h3{
+         font-size: 40px;
+         font-weight: 700;
+         color:  #f9004d;
+         
+         }
+         .results h2{
+            position: relative;
+         bottom: 40px;
+         font-size: 40px;
+         font-weight: 700;
+         color:  #00abf0;
+         }
+         img {
+            border-radius: 50%;
+}
+         
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <form action="{{ url_for('predict')}}" method="post">
+            <h2 class='container-heading'><span>Liver Disease Prediction 🫀</span></h2>
+            <h3>Your Result's🧬</h3>
+            <h2>⏬</h2>
+            <!-- Result -->
+            <div class="results">
+               <!--{% if prediction==2 %}-->
+               <h1><span class='danger'>Oops!🙁 You have LIVER DISEASE🦠<br><br></span></h1>
+               <h2><span class='danger'>Please Consult a Doctor🩺<br><br></span></h2>
+             
+               <!--{% elif prediction==1 %}-->
+               <h1><span class='safe'>🥳 Congratulation! 🎉<br><br></span></h1>
+               <h2><span class='safe'>You Don't have LIVER DISEASE🫠</span></h2>
+             
+               <!--{% endif %}-->
+            </div>
+         </form>
+      </div>
+      <div>
+   </body>
+</html>

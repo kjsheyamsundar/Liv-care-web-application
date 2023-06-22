@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Liver Disease Prediction 🧬 </title>
+     
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <style>
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    background-image:url('https://i.ibb.co/fvDfF8t/background.png');
+    background-position: center;
+
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-left: 8%;
+    
+}
+
+.logo{
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+     
+}
+
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+            100% {
+                width: 0;
+            }
+         }
+
+.content::before{
+    content: '';
+            position: absolute;
+            top:0;
+            right: 0;
+            width:100%;
+            height: 100%;
+            background: #131313;
+            animation: showRight 1s ease forwards;    
+            animation-delay: .5s;
+}
+
+.logo::before{
+    content: '';
+            position: absolute;
+            top:0;
+            right: 0;
+            width:100%;
+            height: 100%;
+            background:#121111;  
+            animation: showRight 1s ease forwards;    
+            animation-delay: .4s;
+}
+
+span{
+    color: #f9004d;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 23px;
+}
+
+nav ul li a:hover,nav ul li a.active{
+    color: #f9004d;
+    transition: .4s;
+}
+
+button{
+    color: white;
+    background-color: #f9004d;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 13px 30px;
+    transition: .4s;
+}
+
+button:hover{
+    color: #faf8f8;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #f9004d;
+
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+
+h1{
+    color: white;
+    margin: 20px 0px 20px;
+    font-size: 75px;
+}
+
+h3{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+h4{
+    color: #f9004d;
+    letter-spacing: 2px;
+    font-size: 30px;
+    
+}
+
+.about{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #191919;
+
+}
+
+.about img{
+    margin-top: 100px;
+    height: 400px;
+    width: 430px;
+    border-radius: 12%;
+
+}
+
+.about img:hover{
+   box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.about-text{
+    width: 550px;
+
+}
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-text h2{
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.about-text h5{
+    columns: white;
+    left: spacing 20px;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+
+}
+
+.about-text p{
+    color: #fcfcfc;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+    text-transform: capitalize;
+
+}
+
+/* Service Section*/
+
+.service{
+    background: #101010;
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.title h2{
+    color: white;
+    font-size: 75px;
+    width: 1130px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+
+}
+
+.card{
+    height: 370px;
+    width: 360px;
+    padding: 20px 35px;
+    background: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card p{
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    margin: 20px 0px;
+    color: #f9004d;
+}
+
+h5{
+    color: #00abf0;
+    font-size: 23px;
+    margin: bottom 15px; ;
+}
+.pra p{
+    color:  whitesmoke;
+    font-size: 16px;
+
+    line-height: 27px;
+    margin-bottom: 25px;
+
+}
+
+.prediction{
+    height: 100vh;
+    width: 100%;
+    background-image:url('https://i.ibb.co/fvDfF8t/background.png');
+    background-position: center;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.prediction h2{
+    width: 550px;
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.prediction input{
+    width: 70%;
+           padding: 0.4rem;
+           font-size: 1.1rem;
+           border-radius: 5px;
+           border: 1px; ;
+           outline:#333;
+           background: #d8d7d7 ;
+
+}
+
+/* Stages Section*/
+
+.stages{
+    background: #101010;
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.container{
+		width: 90%;
+		padding: 20px;
+		margin: 100px auto;	 
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+  .stages h1{
+    text-align: center;
+  }
+	
+
+	.box1{
+		width: 250px;
+		margin: 0 10px;
+		box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+		transition: 1s;
+
+	}
+	.box1 img{
+		display: block;
+		width:100%;
+		border-radius: 5px;
+	}
+	.box1:hover{
+		transform: scale(1.3);
+		z-index: 2;
+	}
+
+    /*Smooth Scrolling*/
+    
+    html{
+        scroll-behavior: smooth;
+    }
+
+
+
+      </style>
+      </head>
+   <body>
+    <!---hero sectiion start-->
+
+    <div class="hero" id="home">
+        <nav>
+            <h2 class="logo">Liv<span>Care🩺</span></h2>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#service">Our Service</a></li>
+                <li><a href="#stages">Stages</a></li>
+                <li><a href="#prediction">Liver Disease Prediction </a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <h4>Welcome to </h4>
+            <h1>Liver Disease Prediction </h1>
+            <h3>Check Your State </h3>
+            <br>
+            <a href="#about"><button>Let's go</button></a>
+
+        </div>
+    </div>
+
+    <!--About Section-->
+
+    <section class="about" id="about">
+        <div class="main">
+            <img src="https://www.meduniwien.ac.at/web/fileadmin/_processed_/9/d/csm_shutterstock_2152249131_2640f8fcb6.jpg">
+            <div class="about-text">
+
+                <h2>About Us</h2>
+                <h5><span>Liver Disease Prediction</span></h5>
+                <p>Liver diseases encompass a wide range of conditions that affect the liver's structure and function, including hepatitis, cirrhosis, fatty liver disease, and liver cancer. Early detection and timely management are crucial for improving patient outcomes and reducing the burden on healthcare systems. Machine learning and data analysis techniques are often utilized to develop predictive models for liver disease. These models are trained on large datasets containing information from individuals with and without liver diseases. By analyzing patterns and correlations within the data, the models learn to identify risk factors and predict the likelihood of liver disease occurrence in a given individual.</p>
+
+    </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Service section--->
+
+    <div class="service"id="service">
+        <div class="title">
+            <h2>Our Service</h2>
+        </div>
+        <div class="box">
+            <div class="card">
+            <p>📝</p>
+            <h5>Prediction</h5>
+            <div class="pra">
+                <p>Our prediction model uses artificial intelligence and machine learning in combination with clinical findings has further improved disease detection</p>
+                <p style="text-align: center;">
+                    
+                </p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="card">
+                <p>🎯</p>
+            <h5>Accuracy</h5>
+            <div class="pra">
+                <p>Accuracy is to be ensuring that the information is correct and without any mistake. Information accuracy is important because may the life of people depend in it.</p>
+                <p style="text-align: center;">
+                    
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <div class="card">
+                <p>📊</p>
+            <h5>Measures</h5>
+            <div class="pra">
+
+                <p>On basis of the result: The patient are suggested to visit hospital and undergo Serum albumin test. This test is used to measure the level of albumin (a protein in the blood) and may be useful in the diagnosis of liver disease.</p>
+                <p style="text-align: center;">
+                   
+                </p>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+     <!--Stages of liver disease section -->
+
+     <section class="stages" id="stages">
+        <div class="stages-content">
+        <h1>Stages Of Liver Disease</h1>
+        <div class="container">
+
+          <div class="box1">
+            <img src="https://i.pinimg.com/564x/ed/de/80/edde805b2e27385daefd2c3a0661234c.jpg">
+          </div>
+
+          <div class="box1">
+            <img src="https://i.pinimg.com/564x/0b/4c/55/0b4c55ecf3b2e9236d3530b249efe22e.jpg">
+          </div>
+
+          <div class="box1">
+            <img src="https://i.pinimg.com/564x/d3/d1/84/d3d184ca712aeccf641e591a89da1925.jpg">
+          </div>
+
+          <div class="box1">
+            <img src="https://i.pinimg.com/564x/31/ff/e4/31ffe4f1aaf90f7efa92daba50aa48d7.jpg">
+          </div>
+          
+        </div>
+        
+    </div>
+    </section>
+
+
+     <!--Liver disease predicition section -->
+    
+     <div class="prediction" id="prediction">
+        <h2>Liver Disease Prediction</h2>
+      
+
+                <form action="{{ url_for('predict') }}" method="POST">
+                    
+                    <h4>Age</h4>
+                    <input id="first" name="Age" placeholder="in Year" required="required">
+                    <br>
+                    <h4>Gender</h4>
+                    <input id="second" name="Gender" placeholder="Male = 1, Female=0" required="required">
+                    <br>
+                    <h4>Total Bilirubin</h4>
+                    <input id="third" name="Total_Bilirubin" placeholder="Total Bilirubin" required="required">
+                    <br>
+                    <h4>Alkaline phosphatase</h4>
+                    <input id="fourth" name="Alkaline_Phosphotase" placeholder="Alkaline Phosphotase" required="required">
+                    <br>
+                    <h4>Alamnine Aminotransferase</h4>
+                    <input id="fifth" name="Alamine_Aminotransferase" placeholder="Alamine Aminotransferase" required="required">
+                    <br>
+                    <h4>Aspartate Aminotransferase</h4>
+                    <input id="sixth" name="Aspartate_Aminotransferase" placeholder="Aspartate Aminotransferase" required="required">
+                    <br>
+                    <h4>Total Proteins</h4>
+                    <input id="seventh" name="Total_Protiens" placeholder="Total Protiens" required="required">
+                    <br>
+                    <h4>Albumin</h4>
+                    <input id="eight" name="Albumin" placeholder="Albumin" required="required">
+                    <br>
+                    <h4>Albumin and Globulin Ratio</h4>
+                    <input id="ninth" name="Albumin_and_Globulin_Ratio" placeholder="Albumin and Globulin Ratio" required="required">
+                    <br>
+                    <br>
+                    <button id="sub" type="submit ">Predict</button>
+                    </form>
+                    </div>
+                
+            
+     </div>
+   </body>
+</html>
